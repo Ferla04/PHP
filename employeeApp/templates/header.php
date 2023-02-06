@@ -30,7 +30,7 @@ $URL_BASE = "http://localhost/PHP/employeeApp/"
             <a class="nav-link" href="<?=$URL_BASE?>sections/employees/">Empleados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=$URL_BASE?>sections/charges/">Puestos</a>
+            <a class="nav-link" href="<?=$URL_BASE?>sections/positions/">Puestos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=$URL_BASE?>sections/users/">Usuarios</a>

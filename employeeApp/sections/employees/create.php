@@ -36,8 +36,8 @@
       </div>
 
       <div class="mb-3">
-        <label for="idCharges" class="form-label">Cargo: </label>
-        <select class="form-select form-select-sm" name="idCharges" id="idCharges">
+        <label for="positionId" class="form-label">Cargo: </label>
+        <select class="form-select form-select-sm" name="positionId" id="positionId">
           <option selected>Select one</option>
           <option value="">New Delhi</option>
           <option value="">Istanbul</option>

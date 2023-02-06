@@ -6,8 +6,8 @@
 
     <form action="" method="post" enctype="multipart/form-data">
       <div class="mb-3">
-        <label for="charge" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" name="charge" id="charge">
+        <label for="position" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" name="position" id="position">
       </div>
 
       <button type="submit" class="btn btn-success">Agregar</button> &nbsp;
