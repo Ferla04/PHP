@@ -1,3 +1,17 @@
+<?php
+include("../../database/db.php");
+
+$userList = $connection->consult("SELECT * FROM tbl_users");
+
+if (isset($_GET["id"])) {
+  
+  $id = $_GET["id"];
+  $connection->consult("DELETE FROM tbl_users WHERE id=$id");
+  header("Location: index.php");
+
+}
+
+?>
 <?php include("../../templates/header.php"); ?>
 
 <div class="card bg-dark">
@@ -19,16 +33,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="">
-            <td scope="row">15610</td>
-            <td>Fernanda</td>
-            <td>Fer@gmail.com</td>
-            <td>*****</td>
-            <td>
-              <a class="btn btn-info" href="create.php" role="button">Editar</a>
-              <a class="btn btn-danger" href="create.php" role="button">Eliminar</a>
-            </td>
-          </tr>
+          <?php foreach ($userList as $user) {?>
+            <tr class="">
+              <td scope="row"><?=$user["id"]?></td>
+              <td><?=$user["user"]?></td>
+              <td><?=$user["email"]?></td>
+              <td>*****</td>
+              <td>
+                <a class="btn btn-info" href="edit.php?id=<?=$user["id"]?>" role="button">Editar</a>
+                &nbsp;
+                <a 
+                  class="btn btn-danger" 
+                  href="index.php?id=<?=$user["id"]?>" 
+                  role="button"
+                  <?= $user["id"] === 1 ? "hidden" : "" ?>
+                >
+                  Eliminar
+                </a>
+              </td>
+            </tr>
+          <?php }?>
         </tbody>
       </table>
     </div>

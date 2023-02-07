@@ -1,10 +1,15 @@
 <?php
-include("../../db.php");
+include("../../database/db.php");
 
-$sentence = $connection->prepare("SELECT * FROM $database.tbl_positions");
-$sentence->execute(); 
-$positionList = $sentence->fetchAll(PDO::FETCH_ASSOC);
+$positionList = $connection->consult("SELECT * FROM tbl_positions");
 
+if (isset($_GET["id"])) {
+
+  $id = $_GET["id"];
+  $connection->consult("DELETE FROM tbl_positions WHERE id=$id");
+  header("Location: index.php");
+
+}
 
 ?>
 <?php include("../../templates/header.php"); ?>
@@ -27,14 +32,15 @@ $positionList = $sentence->fetchAll(PDO::FETCH_ASSOC);
         </thead>
         <tbody>
           <?php foreach ($positionList as $position) {?>
-          <tr>
-            <td scope="row"><?=$position["id"]?></td>
-            <td><?=$position["positionName"]?></td>
-            <td>
-              <a class="btn btn-info" href="create.php" role="button">Editar</a>
-              <a class="btn btn-danger" href="create.php" role="button">Eliminar</a>
-            </td>
-          </tr>
+            <tr>
+              <td scope="row"><?=$position["id"]?></td>
+              <td><?=$position["positionName"]?></td>
+              <td>
+                <a class="btn btn-info" href="edit.php?id=<?=$position["id"]?>" role="button">Editar</a>
+                &nbsp;
+                <a class="btn btn-danger" href="index.php?id=<?=$position["id"]?>" role="button">Eliminar</a>
+              </td>
+            </tr>
           <?php }?>
         </tbody>
       </table>
