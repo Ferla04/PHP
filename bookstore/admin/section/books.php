@@ -36,8 +36,9 @@ if( $_POST ){
       break;
   }
 
-  if( $action !== 'select'){
-    header('Location:books.php');
+  if( $action !== 'select' ){
+    header('Location: /books.php');
+    // echo "<script>window.location='$URL/admin/section/books.php'</script>";
   }
 
 }

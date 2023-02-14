@@ -1,5 +1,5 @@
 <?php
-require '../../credentials.php';
+$URL = 'https://bookstore-ferla04.000webhostapp.com/bookstore';
 $ADMIN_URL = $URL.'/admin';
 
 session_start();
