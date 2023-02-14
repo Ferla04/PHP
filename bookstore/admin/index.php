@@ -52,6 +52,7 @@ if( $_POST ){
               <input type="password" class="form-control" name="password" required>
           </div>
           <button type="submit" class="btn btn-primary">Sign in</button>
+          <p class="mt-2">User: admin - password: 12345</p>
         </form>
 
       </div>
