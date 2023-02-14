@@ -1,8 +1,9 @@
 <?php include './template/header.php'; ?>
 <?php
+require './credentials.php';
 require 'admin/func/CRUD.php';
 include 'admin/config/db.php';
-$connection = new ConnectionMysql();
+$connection = new ConnectionMysql(SERVER, USER, PASSWORD, DATABASE);
 $booksList = selectAllMysql( $connection );
 ?>
 

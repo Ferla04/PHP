@@ -1,6 +1,6 @@
 <?php
-$URL = 'http://'.$_SERVER['HTTP_HOST'].'/PHP/bookstore'; 
-$ADMIN_URL = $URL.'/admin';
+require '../../credentials.php';
+$ADMIN_URL = URL.'/admin';
 
 session_start();
 if( !isset($_SESSION['user']) ){

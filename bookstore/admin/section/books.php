@@ -1,6 +1,6 @@
 <?php include '../template/header.php';?>
 <?php
-require '../../database/credentials.php';
+require '../../credentials.php';
 require '../func/CRUD.php';
 include '../config/db.php';
 $connection = new ConnectionMysql(SERVER, USER, PASSWORD, DATABASE);
