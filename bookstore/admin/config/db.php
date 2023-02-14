@@ -2,13 +2,18 @@
 
 class ConnectionMysql {
 
-  private $server = 'localhost';
-  private $user = 'root';
-  private $password = '';
-  private $database = 'bookstore';
+  private $server;
+  private $user;
+  private $password;
+  private $database;
   private $connection;
 
-  public function __construct(){
+  public function __construct( $server, $user, $password, $database ){
+
+    $this->server = $server;
+    $this->user = $user;
+    $this->password = $password;
+    $this->database = $database;
 
     try{
       $this->connection = new PDO( "mysql:host=$this->server;dbname=$this->database", $this->user, $this->password );
