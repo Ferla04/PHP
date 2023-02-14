@@ -1,6 +1,6 @@
 <?php
 require '../../credentials.php';
-$ADMIN_URL = URL.'/admin';
+$ADMIN_URL = $URL.'/admin';
 
 session_start();
 if( !isset($_SESSION['user']) ){

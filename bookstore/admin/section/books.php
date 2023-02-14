@@ -3,7 +3,7 @@
 require '../../credentials.php';
 require '../func/CRUD.php';
 include '../config/db.php';
-$connection = new ConnectionMysql(SERVER, USER, PASSWORD, DATABASE);
+$connection = new ConnectionMysql($SERVER, $USER, $PASSWORD, $DATABASE);
 $dateTime = new DateTime();
 $bookId = '';
 $bookName = '';
